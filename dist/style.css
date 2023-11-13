@@ -1,0 +1,30 @@
+body {
+    margin: 0;
+    height: 100vh;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+}
+
+.form {
+    background-color: aliceblue;
+    width: 450px;
+}
+
+form {
+    padding: 32px;
+    display: grid;
+    grid-template: 1fr 1fr / 1fr 1fr;
+    gap: 16px;
+    align-items: center;
+}
+
+button {
+    font-weight: bold;
+    border: 1px solid black;
+    border-radius: 8px;
+    cursor: pointer;
+    padding: 4px;
+    width: 64px;
+}

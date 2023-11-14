@@ -1,4 +1,4 @@
-export default function validate() {
+export function validateEmail() {
 	const email = document.querySelector("#email");
 	const emailConstraint = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
 
@@ -10,7 +10,7 @@ export default function validate() {
 	email.addEventListener("blur", () => {
 		if (email !== "") {
 			if (!emailConstraint.test(email.value)) {
-				email.setCustomValidity("Invalid e-mail.");
+				email.setCustomValidity("Invalid E-mail.");
 				email.reportValidity();
 			} else {
 				email.setCustomValidity("");
@@ -18,7 +18,9 @@ export default function validate() {
 			}
 		}
 	});
+}
 
+export function validateCountry() {
 	const country = document.querySelector("#country");
 	const countryConstraint = /^[a-zA-Z ]*$/;
 
@@ -30,11 +32,33 @@ export default function validate() {
 	country.addEventListener("blur", () => {
 		if (country !== "") {
 			if (!countryConstraint.test(country.value)) {
-				country.setCustomValidity("Invalid country.");
+				country.setCustomValidity("Invalid Country.");
 				country.reportValidity();
 			} else {
 				country.setCustomValidity("");
 				country.reportValidity();
+			}
+		}
+	});
+}
+
+export function validateZipcode() {
+	const zipcode = document.querySelector("#zipcode");
+	const zipcodeConstraint = /^\d{5}(?:[-\s]\d{4})?$/;
+
+	zipcode.addEventListener("input", () => {
+		zipcode.setCustomValidity("");
+		zipcode.reportValidity();
+	});
+
+	zipcode.addEventListener("blur", () => {
+		if (zipcode !== "") {
+			if (!zipcodeConstraint.test(zipcode.value)) {
+				zipcode.setCustomValidity("Invalid ZIP Code.");
+				zipcode.reportValidity();
+			} else {
+				zipcode.setCustomValidity("");
+				zipcode.reportValidity();
 			}
 		}
 	});

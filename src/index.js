@@ -1,5 +1,5 @@
 import { submitForm } from "./form";
-import validate from "./validate";
+import { validateEmail, validateCountry, validateZipcode } from "./validate";
 
 const submit = document.querySelector("#submit");
 
@@ -8,6 +8,7 @@ submit.addEventListener("click", () => {
 });
 
 window.onload = () => {
-	document.querySelector("#email").oninput = validate;
-  document.querySelector("#country").oninput = validate;
+	document.querySelector("#email").oninput = validateEmail;
+  document.querySelector("#country").oninput = validateCountry;
+  document.querySelector("#zipcode").oninput = validateZipcode;
 };

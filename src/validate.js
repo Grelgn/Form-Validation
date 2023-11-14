@@ -63,3 +63,49 @@ export function validateZipcode() {
 		}
 	});
 }
+
+export function validatePassword() {
+	const password = document.querySelector("#password");
+
+	const passwordConstraint =
+		/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/;
+
+	password.addEventListener("input", () => {
+		password.setCustomValidity("");
+		password.reportValidity();
+	});
+
+	password.addEventListener("blur", () => {
+		if (password !== "") {
+			if (!passwordConstraint.test(password.value)) {
+				password.setCustomValidity(
+					"Password needs to be at least 8 characters and must include: a number (0-9), an uppercase letter (A-Z) and a lowercase letter (a-z)."
+				);
+				password.reportValidity();
+			} else {
+				password.setCustomValidity("");
+				password.reportValidity();
+			}
+		}
+	});
+}
+
+export function confirmPassword() {
+	const password = document.querySelector("#password");
+	const confirmPwd = document.querySelector("#confirm-pwd");
+
+	confirmPwd.addEventListener("input", () => {
+		confirmPwd.setCustomValidity("");
+		confirmPwd.reportValidity();
+	});
+
+	confirmPwd.addEventListener("blur", () => {
+		if (password.value !== confirmPwd.value) {
+			confirmPwd.setCustomValidity("Passwords do not match!");
+			confirmPwd.reportValidity();
+		} else {
+			confirmPwd.setCustomValidity("");
+			confirmPwd.reportValidity();
+		}
+	});
+}

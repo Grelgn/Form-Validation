@@ -5,22 +5,22 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Form Validation</title>
 		<link rel="stylesheet" href="style.css" />
-		<script src="main.js"></script>
+		<script src="main.js" defer></script>
 	</head>
 	<body>
 		<div class="form">
 			<form>
 				<label for="email">E-Mail:</label>
-				<input type="email" name="email" id="email" />
+				<input type="text" name="email" id="email" />
 				<label for="country">Country:</label>
 				<input type="text" name="country" id="country" />
 				<label for="zipcode">ZIP Code:</label>
 				<input type="text" name="zipcode" id="zipcode" />
 				<label for="password">Password:</label>
-				<input type="password" name="password" id="password">
-				<label for="confirm-password">Confirm Password:</label>
-				<input type="password" name="confirm-password" id="confirm-password">
-				<button>Submit</button>
+				<input type="password" name="password" id="password" />
+				<label for="confirm-pwd">Confirm Password:</label>
+				<input type="password" name="confirm-pwd" id="confirm-pwd" />
+				<button type="button" id="submit">Submit</button>
 			</form>
 		</div>
 	</body>

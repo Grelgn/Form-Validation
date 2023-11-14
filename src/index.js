@@ -9,4 +9,5 @@ submit.addEventListener("click", () => {
 
 window.onload = () => {
 	document.querySelector("#email").oninput = validate;
+  document.querySelector("#country").oninput = validate;
 };
